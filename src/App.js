@@ -9,7 +9,7 @@ function App() {
   return (
     <main className='App'>
       <Capture setFile={setFile} />
-      <Image file={file} />
+      {file ? <Image file={file} /> : null}
     </main>
   );
 }
