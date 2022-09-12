@@ -1,15 +1,15 @@
+import { useState } from "react";
+import { Image, Capture } from "./components";
+
 import "./App.css";
 
 function App() {
+  const [file, setFile] = useState(null);
+
   return (
     <main className='App'>
-      <label htmlFor='capture'>Capture Photo</label>
-      <div>
-        <input type='file' id='capture' accept='image/*' capture />
-      </div>
-      <div>
-        <img src='' id='img' alt='from phone' />
-      </div>
+      <Capture setFile={setFile} />
+      <Image file={file} />
     </main>
   );
 }
